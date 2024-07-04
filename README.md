@@ -1,5 +1,5 @@
 # Maui-Mqtt
-First try to mirgrate `M2MQTTdotnetcore` to .NET MAUI.
+Using `M2MqttDotnetCore` to publish and subscribe to an MQTT server on MAUI
 
 # Additional Information
 - Emgu.CV nuget: https://www.nuget.org/packages/M2MqttDotnetCore
