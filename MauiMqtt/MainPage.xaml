@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMqtt.MainPage"
+             BackgroundColor="#EAECEB"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="*,*,*" Margin="20">
+                <Label Grid.Row="0" Text="MauiMqtt" TextColor="#228BBA" FontSize="30" FontAttributes="Bold" Margin="10" VerticalOptions="End"/>
+                <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
+                    <Frame Grid.Column="0" Margin="20" Padding="10" BackgroundColor="#F0F5F3" CornerRadius="10" WidthRequest="200">
+                        <StackLayout>
+                            <Label Text="Setting" TextColor="#228BBA" FontSize="20" FontAttributes="Bold"/>
+                            <BoxView HeightRequest="1" BackgroundColor="#228BBA" Margin="0,0,0,20"/>
+                            <Label Text="Broker" TextColor="Black" FontSize="Caption"/>
+                            <Entry x:Name="Txt_Broker" Placeholder="Enter broker" TextColor="Black"/>
+                            <Label Text="Port" TextColor="Black" FontSize="Caption"/>
+                            <Entry x:Name="Txt_Port" Placeholder="Enter port" Keyboard="Numeric" TextColor="Black"/>
+                            <Label Text="Username" TextColor="Black" FontSize="Caption"/>
+                            <Entry x:Name="Txt_Username" Placeholder="Enter username" TextColor="Black"/>
+                            <Label Text="Password" TextColor="Black" FontSize="Caption"/>
+                            <Entry x:Name="Txt_Password" Placeholder="Enter password" IsPassword="True" TextColor="Black"/>
+                            <Button x:Name="Btn_Connect" Text="Connect" BackgroundColor="#228BBA" TextColor="White" Margin="0,50,0,0" HorizontalOptions="End" Clicked="Btn_Connect_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Column="1" Margin="20" Padding="10" BackgroundColor="#F0F5F3" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="Server" TextColor="#228BBA" FontSize="20" FontAttributes="Bold"/>
+                            <BoxView HeightRequest="1" BackgroundColor="#228BBA" Margin="0,0,0,20"/>
+                            <ScrollView VerticalOptions="FillAndExpand">
+                                <Editor x:Name="Txt_Server" IsReadOnly="False" TextColor="Black" HeightRequest="300"/>
+                            </ScrollView>
+                            <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,10,0,0">
+                                <Entry Grid.Column="0" x:Name="Txt_Topic" Placeholder="Topic/" TextColor="Black" BackgroundColor="White"/>
+                                <Entry Grid.Column="1" x:Name="Txt_Message" Placeholder="Type a message" TextColor="Black" BackgroundColor="White"/>
+                                <Button Grid.Column="2" x:Name="Btn_Publish" Text="Publish" BackgroundColor="#228BBA" TextColor="White" Clicked="Btn_Publish_Clicked"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <StackLayout Grid.Row="2" Margin="50"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
